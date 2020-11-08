@@ -67,9 +67,40 @@ window.addEventListener('mouseup',
   }
 );
 
+window.addEventListener('touchstart',
+  function(event){
+    isTouchDown = true;
+  }
+);
+
+window.addEventListener('touchend',
+  function(event){
+    isTouchDown = false;
+  }
+);
+
 window.addEventListener('mousemove',
   function(event){
     if(isMouseDown){
+      mouse.x = event.x;
+      mouse.y = event.y;
+      for(let p = 0; p < particlesArray.length ; p++){
+        let dx = mouse.x - particlesArray[p].x;
+        let dy = mouse.y - particlesArray[p].y;
+        let dist = Math.sqrt(dx*dx + dy*dy);
+        if(dist < range){
+          excited = true;
+          particlesArray[p].dirX += attract*(acceleration/dist)*dx;
+          particlesArray[p].dirY += attract*(acceleration/dist)*dy;
+        }
+      }
+    }
+  }
+);
+
+window.addEventListener('touchmove',
+  function(event){
+    if(isTouchDown){
       mouse.x = event.x;
       mouse.y = event.y;
       for(let p = 0; p < particlesArray.length ; p++){

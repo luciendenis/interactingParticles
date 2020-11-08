@@ -5,11 +5,12 @@
 }
 
 #maincanvas{
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
+  overflow: hidden;
   background: radial-gradient(#35384a,#1a1c29);
   filter: blur(0px) hue-rotate(0deg);
 }

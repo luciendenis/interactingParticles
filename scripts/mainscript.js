@@ -71,13 +71,13 @@ window.addEventListener('touchstart',
   function(event){
     isTouchDown = true;
   }
-);
+, false);
 
 window.addEventListener('touchend',
   function(event){
     isTouchDown = false;
   }
-);
+, false);
 
 window.addEventListener('mousemove',
   function(event){
@@ -115,7 +115,7 @@ window.addEventListener('touchmove',
       }
     }
   }
-);
+, false);
 
 // Particle creation
 class Particle{

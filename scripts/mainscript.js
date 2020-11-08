@@ -101,8 +101,8 @@ window.addEventListener('mousemove',
 window.addEventListener('touchmove',
   function(event){
     if(isTouchDown){
-      mouse.x = event.x;
-      mouse.y = event.y;
+      mouse.x = event.touches[0].clientX;
+      mouse.y = event.touches[0].clientY;
       for(let p = 0; p < particlesArray.length ; p++){
         let dx = mouse.x - particlesArray[p].x;
         let dy = mouse.y - particlesArray[p].y;

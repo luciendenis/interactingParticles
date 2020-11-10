@@ -148,9 +148,11 @@ class Particle{
     // checking if particle is getting outside canvas to make it bounce against the walls
     if(this.x + this.size > canvas.width || this.x - this.size <0){
       this.dirX = -this.dirX;
+      this.excite();
     }
     if(this.y + this.size > canvas.height || this.y - this.size <0){
       this.dirY = -this.dirY;
+      this.excite();
     }
 
     // applying particle interaction
